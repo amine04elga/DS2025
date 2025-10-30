@@ -1,7 +1,9 @@
 # Rapport d'Analyse Approfondie du PIB
 ## Comparaison Internationale Multi-Pays
 
----
+ahmed amine elgadi
+![WhatsApp Image 2024-04-22 à 17 00 00_56bf9be3](https://github.com/user-attachments/assets/3f55ffb9-610a-496f-a563-7206dd919e95)
+
 
 ## 1. Introduction et Cadrage de l'Étude
 
