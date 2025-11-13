@@ -1,149 +1,88 @@
-````markdown
-# Étude sur la qualité de l'air - Dataset UCI (ID: 360)
+Air Quality Dataset
 
-## 📋 Informations générales
+DOI : 10.24432/C59K5F
+Source : UCI Machine Learning Repository (UCI) 
+DOI
 
-**DOI:** 10.24432/C59K5F  
-**Créateur:** Saverio Vito  
-**Date de don:** 22 mars 2016  
-**Publication associée:** De Vito et al., Sensors and Actuators B: Chemical, Vol. 129,2, 2008  
-**Licence:** Creative Commons Attribution 4.0 International (CC BY 4.0)
+Description
 
-## 🎯 Objectif de l'étude
+La base de données contient les réponses horaires moyennes d’un dispositif multisenseur de gaz déployé sur le terrain dans une ville italienne. 
+DOI
 
-Cette étude vise à enregistrer et analyser les réponses d'un dispositif multicapteur de gaz déployé sur le terrain dans une ville italienne. Les réponses moyennes horaires sont enregistrées parallèlement aux concentrations de gaz de référence provenant d'un analyseur certifié.
+Elle inclut également des valeurs de concentrations de gaz mesurées par un analyseur certifié co-localisé. 
+DOI
 
-## 📍 Zone géographique et contexte
+Caractéristiques principales
 
-- **Lieu:** Ville italienne (nom non spécifié)
-- **Emplacement précis:** Zone significativement polluée, au niveau de la route
-- **Type d'environnement:** Urbain, exposition directe à la pollution routière
+Type de données : Multivariée, série temporelle. 
+DOI
 
-## ⏰ Période de collecte
+Sujet : Informatique (Computer Science) — tâche de régression. 
+DOI
 
-- **Début:** Mars 2004
-- **Fin:** Février 2005
-- **Durée totale:** 1 an (12 mois consécutifs)
-- **Fréquence d'enregistrement:** Moyennes horaires
-- **Particularité:** Il s'agit du plus long enregistrement librement disponible de réponses de capteurs chimiques de qualité de l'air déployés sur le terrain
+Nombre d’instances : 9 358 (heures) 
+DOI
 
-## 🔬 Dispositif technique
+Nombre de caractéristiques : 15 
+DOI
 
-### Capteurs utilisés
-Le dispositif contient un réseau de **5 capteurs chimiques à oxyde métallique** :
+Présence de valeurs manquantes : Oui — les valeurs manquantes sont codées par « -200 ». 
+DOI
 
-1. **PT08.S1** (oxyde d'étain) - ciblant le CO
-2. **PT08.S2** (dioxyde de titane) - ciblant les NMHC
-3. **PT08.S3** (oxyde de tungstène) - ciblant les NOx
-4. **PT08.S4** (oxyde de tungstène) - ciblant le NO2
-5. **PT08.S5** (oxyde d'indium) - ciblant l'O3
+Variables / Attributs
 
-### Analyseur de référence co-localisé
-Un analyseur certifié a fourni les concentrations réelles (Ground Truth) pour validation.
+Voici un résumé des variables : 
+DOI
 
-## 📊 Données collectées
+Variable	Type	Description
+Date	Feature	Date (JJ/MM/AAAA)
+Time	Feature	Heure (HH.MM.SS)
+CO(GT)	Feature	Concentration horaire moyenne de CO (mg/m³) – analyseur de référence
+PT08.S1(CO)	Feature	Réponse horaire moyenne du capteur (ciblé CO)
+NMHC(GT)	Feature	Concentration horaire moyenne d’hydrocarbures non-méthaniques (µg/m³)
+C6H6(GT)	Feature	Concentration horaire moyenne de benzène (µg/m³)
+PT08.S2(NMHC)	Feature	Réponse horaire moyenne du capteur (ciblé NMHC)
+NOx(GT)	Feature	Concentration horaire moyenne de NOx (ppb)
+PT08.S3(NOx)	Feature	Réponse horaire moyenne du capteur (ciblé NOx)
+NO2(GT)	Feature	Concentration horaire moyenne de NO₂ (µg/m³)
+PT08.S4(NO2)	Feature	Réponse horaire moyenne du capteur (ciblé NO₂)
+PT08.S5(O3)	Feature	Réponse horaire moyenne du capteur (ciblé O₃)
+T	Feature	Température (°C)
+RH	Feature	Humidité relative (%)
+AH	Feature	Humidité absolue
+Population / Zone géographique / Période
 
-### Caractéristiques du dataset
-- **Nombre d'instances:** 9 358 enregistrements horaires
-- **Nombre de variables:** 15
-- **Type de données:** Multivarié, séries temporelles
-- **Valeurs manquantes:** Oui (marquées avec la valeur -200)
+Zone géographique : Une ville italienne, dans une zone fortement polluée, au niveau de la route. 
+DOI
 
-### Variables mesurées
+Période : de mars 2004 à février 2005 (une année complète) 
+DOI
 
-#### Polluants (concentrations réelles de référence)
-1. **CO(GT)** - Monoxyde de carbone (mg/m³)
-2. **NMHC(GT)** - Hydrocarbures non méthaniques totaux (µg/m³)
-3. **C6H6(GT)** - Benzène (µg/m³)
-4. **NOx(GT)** - Oxydes d'azote totaux (ppb)
-5. **NO2(GT)** - Dioxyde d'azote (µg/m³)
+Population : Ce ne sont pas des données individuelles (personnes), mais des mesures horaires d’un dispositif de capteurs et d’un analyseur de référence dans l’environnement urbain.
 
-#### Réponses des capteurs
-- PT08.S1 à PT08.S5 (réponses moyennes horaires de chaque capteur)
+Licence et utilisation
 
-#### Variables environnementales
-- **Température** (°C)
-- **Humidité relative** (%)
-- **Humidité absolue** (AH)
+Licence : Creative Commons Attribution 4.0 International (CC BY 4.0) 
+DOI
 
-#### Variables temporelles
-- **Date** (JJ/MM/AAAA)
-- **Heure** (HH.MM.SS)
+Usage : Utilisable pour la recherche. Usage commercial exclu (à vérifier selon les termes exacts). 
+DOI
 
-## ⚠️ Défis et particularités
+Usage / Application
 
-### Problèmes identifiés
-L'étude a mis en évidence plusieurs défis techniques importants :
+Typiquement utilisée pour des tâches de régression, calibration de capteurs, détection de dérive des capteurs, analyse des séries temporelles de pollution de l’air. 
+DOI
 
-1. **Sensibilités croisées:** Les capteurs réagissent à plusieurs polluants, pas uniquement à leur cible nominale
-2. **Dérive conceptuelle:** Changements dans les relations entre les entrées et sorties au fil du temps
-3. **Dérive des capteurs:** Dégradation des performances des capteurs physiques pendant la période de déploiement
+Peut servir à la recherche en qualité de l’air, capteurs environnementaux, modélisation de la pollution urbaine, apprentissage automatique appliqué aux signaux environnementaux.
 
-Ces phénomènes affectent les capacités d'estimation des concentrations des capteurs, comme décrit dans la publication de De Vito et al. (2008).
+Notes / Limitations
 
-## 🎓 Utilisation du dataset
+Il existe des valeurs manquantes codées « -200 ». 
+DOI
 
-### Tâches associées
-- **Régression:** Prédiction des concentrations de polluants
-- **Calibration de capteurs:** Correction des dérives et sensibilités croisées
-- **Surveillance environnementale:** Modélisation de la qualité de l'air urbain
+Le capteur multisenseur montre des effets de dérive (“sensor drift”) et des sensibilités croisées (“cross-sensitivities”), ce qui peut affecter l’estimation des concentrations. 
+DOI
 
-### Restrictions d'usage
-- ✅ **Autorisé:** Utilisation exclusivement à des fins de recherche
-- ❌ **Interdit:** Toute utilisation commerciale
+Le contexte est spécifique à une seule ville italienne (donc attention à la généralisation).
 
-### Format des fichiers
-- **AirQualityUCI.csv** (766.7 KB)
-- **AirQualityUCI.xlsx** (1.2 MB)
-
-## 📚 Citations et publications
-
-### Citation principale
-````
-Vito, S. (2008). Air Quality [Dataset]. UCI Machine Learning Repository. 
-https://doi.org/10.24432/C59K5F
-````
-
-### Article introductif
-"On field calibration of an electronic nose for benzene estimation in an urban pollution monitoring scenario"  
-Par S. D. Vito, E. Massera, M. Piga, L. Martinotto, G. Francia (2008)  
-Publié dans *Sensors and Actuators B: Chemical*
-
-### Autres publications utilisant ce dataset
-- "Boosting for Dynamical Systems" (Agarwal et al., 2019)
-- "Zoom-SVD: Fast and Memory Efficient Method for Extracting Key Patterns in an Arbitrary Time Range" (Jang et al., 2018)
-- "Combined modeling of sparse and dense noise for improvement of Relevance Vector Machine" (Sundin et al., 2015)
-
-## 💡 Importance pour la recherche
-
-Ce dataset est particulièrement précieux pour la recherche en machine learning car :
-
-1. **Données réelles de terrain:** Reflète les conditions authentiques de surveillance environnementale
-2. **Longue durée:** Une année complète d'enregistrements continus
-3. **Défis réalistes:** Présence de dérives et de sensibilités croisées typiques des déploiements réels
-4. **Données de référence:** Disponibilité des concentrations réelles via un analyseur certifié
-5. **Librement accessible:** Sous licence ouverte pour la recherche
-
-## 🔗 Accès au dataset
-
-### Via UCI ML Repository
-```python
-from ucimlrepo import fetch_ucirepo
-
-# Récupérer le dataset
-air_quality = fetch_ucirepo(id=360)
-
-# Données (DataFrames pandas)
-X = air_quality.data.features
-y = air_quality.data.targets
-
-# Métadonnées
-print(air_quality.metadata)
-
-# Informations sur les variables
-print(air_quality.variables)
-```
-
-### Téléchargement direct
-Taille totale: 1.5 MB (fichiers CSV et Excel disponibles)
-````
+Il s’agit de mesures horaires, donc résolution temporelle relativement fine, mais aucune donnée géographique très granulée (par exemple localisation fine de capteur) n’est explicitée.
